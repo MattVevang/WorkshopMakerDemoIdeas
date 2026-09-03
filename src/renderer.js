@@ -1,6 +1,12 @@
 const { tools, navigateToTool } = globalThis.ChargerTools;
-const browser = document.querySelector("#browser");
 const navigation = document.querySelector("#tool-nav");
+const browser = document.createElement("webview");
+
+browser.id = "browser";
+browser.partition = "persist:charger-robotics";
+browser.setAttribute("allowpopups", "");
+browser.src = tools[0].url;
+document.querySelector("#content").append(browser);
 
 function setActiveTool(id) {
   navigation.querySelectorAll("button").forEach((button) => {
