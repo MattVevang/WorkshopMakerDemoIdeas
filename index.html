@@ -1,20 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WorkshopMakerDemoIdeas</title>
-  <style>
-    body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f6f8fa; }
-    .card { background: #fff; border: 1px solid #d0d7de; border-radius: 8px; padding: 2rem 3rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-    h1 { margin: 0 0 0.5rem; font-size: 1.6rem; }
-    p { margin: 0; color: #57606a; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>Hello, world!</h1>
-    <p>WorkshopMakerDemoIdeas &mdash; GitHub Pages is live.</p>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self'; frame-src https:"
+    >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Charger Robotics Launcher</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="brand" aria-label="Charger Robotics, FRC Team 3786">
+        <img src="assets/icon.svg" alt="" width="46" height="46">
+        <div>
+          <strong>CHARGER ROBOTICS</strong>
+          <span>FRC TEAM 3786</span>
+        </div>
+      </div>
+      <nav id="tool-nav" aria-label="Team tools"></nav>
+    </header>
+    <main>
+      <webview
+        id="browser"
+        src="https://team3786.slack.com/"
+        partition="persist:charger-robotics"
+        allowpopups
+      ></webview>
+    </main>
+    <script src="src/tools.js"></script>
+    <script src="src/renderer.js"></script>
+  </body>
 </html>

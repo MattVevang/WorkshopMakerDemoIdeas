@@ -1,0 +1,44 @@
+{
+  "name": "charger-robotics-launcher",
+  "version": "1.0.0",
+  "description": "Desktop launcher for Charger Robotics FRC Team 3786 tools",
+  "main": "main.js",
+  "author": "Charger Robotics",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "44.1.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "org.chargerrobotics.launcher",
+    "productName": "Charger Robotics Launcher",
+    "artifactName": "Charger-Robotics-Launcher-Setup-${version}.${ext}",
+    "files": [
+      "assets/**/*",
+      "src/**/*",
+      "index.html",
+      "main.js",
+      "styles.css"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Charger Robotics Launcher"
+    }
+  }
+}
