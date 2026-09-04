@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 76px 1fr;
+}
+
+.toolbar {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 10px 20px;
+  background: linear-gradient(110deg, #0b341a, #166734);
+  border-bottom: 4px solid #ffc72c;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 45%);
+}
+
+.brand {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 11px;
+  min-width: 245px;
+}
+
+.brand img {
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 35%));
+}
+
+.brand strong,
+.brand span {
+  display: block;
+}
+
+.brand strong {
+  color: #ffc72c;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+
+.brand span {
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+button {
+  padding: 10px 15px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  background: rgb(11 11 11 / 35%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 7px;
+  transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+}
+
+button:hover {
+  background: rgb(11 11 11 / 65%);
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #ffc72c;
+  outline-offset: 2px;
+}
+
+button.active {
+  color: #0b341a;
+  background: #ffc72c;
+  border-color: #ffc72c;
+}
+
+main,
+webview {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 850px) {
+  body {
+    grid-template-rows: 120px 1fr;
+  }
+
+  .toolbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    padding-top: 8px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  nav {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  button {
+    padding: 7px 12px;
+  }
+}
